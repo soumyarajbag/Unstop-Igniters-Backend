@@ -8,6 +8,11 @@ import dotenv from "dotenv";
 dotenv.config();
 const app = express();
 
+
+app.all("/", (req, res) => {
+  console.log("Just got a request!");
+  res.send("Request got by Unstop Igniters Club of RCCIIT .");
+});
 app.use(express.json());
 app.use(cors({
   origin : "*",
