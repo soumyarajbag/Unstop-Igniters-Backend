@@ -15,7 +15,7 @@ export const getEvents = async (req , res) => {
 };
 
 export const createEvent = async (req , res) => {
-    const {name , date , count , venue , description , image , winners , winnermembers ,  coordinator , gallery } = req.body;
+    const {name , date , count , venue , description , image , winners , winnermembers , view ,  coordinator , gallery } = req.body;
     let event ;
     try{
         event  = await Events.create({
@@ -29,6 +29,7 @@ export const createEvent = async (req , res) => {
                 winnermembers : winnermembers ,
                   coordinator : coordinator ,
                   gallery ,
+                  view
         });
         
 

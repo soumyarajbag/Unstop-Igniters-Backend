@@ -5,6 +5,7 @@ import eventRouter from "./routes/eventRoutes.js";
 import teamRouter from "./routes/teamRoutes.js";
 import dotenv from "dotenv";
 
+
 dotenv.config();
 const app = express();
 
@@ -19,6 +20,7 @@ app.use(cors({
 }));
 app.use("/events" , eventRouter);
 app.use("/team" , teamRouter);
+
 
 const mongooseUri = process.env.MONGO_URI || "default_fallback_uri"
 mongoose

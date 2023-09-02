@@ -1,19 +1,41 @@
 import mongoose from "mongoose";
+
+const PhotoCredit = new mongoose.Schema({
+    url : {
+        type : String ,
+        required : true
+    },
+    credit : {
+        type : String ,
+        required : false
+    }
+});
 const Person = new mongoose.Schema({
     name : {
         type : String ,
         required : true
     },
+    rank:{
+        type : String ,
+        required : false
+    },
     image : {
         type : String ,
         required : true
+    },
+    social : {
+        type : String ,
+        required : false
+    },
+    link : {
+        type : String ,
+        required : false
     }
 })
-
-const Winners = new mongoose.Schema({
-    domain :{
+const WinnerTeam = new mongoose.Schema({
+    position : {
         type : String ,
-        required : true
+        required : false ,
     },
     team : {
         type : String ,
@@ -23,6 +45,17 @@ const Winners = new mongoose.Schema({
         type : [Person] ,
         required : true
     },
+})
+const Winners = new mongoose.Schema({
+    domain :{
+        type : String ,
+        required : true
+    },
+    win : {
+        type : {WinnerTeam} ,
+        required : true
+    }
+  
 });
 
 const Events = new mongoose.Schema({
@@ -58,12 +91,17 @@ const Events = new mongoose.Schema({
         type : [Winners] ,
         required : false ,
     },
+ 
     coordinator : {
         type : String,
         required : true
     },
     gallery : {
-        type : [String] ,
+        type : [PhotoCredit] ,
+        required : false
+    },
+    view : {
+        type : String ,
         required : false
     }
 });
