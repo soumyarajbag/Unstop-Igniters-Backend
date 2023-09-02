@@ -12,7 +12,7 @@ app.use("/team" , teamRouter);
 
 mongoose
   .connect(
-    "mongodb+srv://soumyarajbag:bag9102003@cluster0.ju9slpn.mongodb.net/Igniters?retryWrites=true&w=majority"
+    "mongodb+srv://rcciitd2cigniters:igniter2023@cluster0.e7en8ml.mongodb.net/Igniters?retryWrites=true&w=majority"
   )
   .then(() => {
     app.listen(5000);

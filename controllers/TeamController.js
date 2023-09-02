@@ -17,11 +17,12 @@ export const getMembers = async (req , res) => {
 export const addMember = async (req , res) => {
     const {cell , name , role , image , linkedin , github , instagram } = req.body;
     let member ;
-    
+   
     try{
         member = new Team({
             cell , name , role , image , linkedin , github , instagram
         })
+        
        await member.save();
     }
     catch(err){

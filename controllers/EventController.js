@@ -15,7 +15,7 @@ export const getEvents = async (req , res) => {
 };
 
 export const createEvent = async (req , res) => {
-    const {name , date , count , venue , description , image , winners , winnermembers ,  coordinator } = req.body;
+    const {name , date , count , venue , description , image , winners , winnermembers ,  coordinator , gallery } = req.body;
     let event ;
     try{
         event  = await Events.create({
@@ -27,11 +27,10 @@ export const createEvent = async (req , res) => {
                image : image ,
                 winners : winners ,
                 winnermembers : winnermembers ,
-                  coordinator : coordinator
+                  coordinator : coordinator ,
+                  gallery ,
         });
-         event  = event._doc;
-         delete event._id;
-        delete event.__v;
+        
 
         await event.save();
     }
