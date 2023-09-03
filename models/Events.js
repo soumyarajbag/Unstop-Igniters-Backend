@@ -51,8 +51,8 @@ const Winners = new mongoose.Schema({
         type : String ,
         required : true
     },
-    win : {
-        type : {WinnerTeam} ,
+    win : { 
+        type : [WinnerTeam] ,
         required : true
     }
   
